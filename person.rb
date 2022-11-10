@@ -1,4 +1,3 @@
-
 class Person
   def initialize(_name, age, _parent_pemission)
     @id = Random.rand(1..1000)
@@ -7,18 +6,18 @@ class Person
     @age = age
   end
   # add getters method
-  attr_reader :id, :name, :age
+  attr_accessor :name, :age
   # add setters method
-  attr_writer :name, :age
+  attr_reader :id
 
   def of_age?
     if @age >= 18
-    end
   end
 
   private :of_age?
 
   def can_use_services?
-    of_age?
+      of_age?
   end
+
 end
