@@ -16,6 +16,6 @@ class Person
   private :of_age?
 
   def can_use_services?
-    of_age?
+    of_age? || @parent_pemission
   end
 end
