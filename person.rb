@@ -12,7 +12,7 @@ class Person
     attr_writer :name, :age
 
     def is_of_age?
-        if @age > 18
+        if @age >= 18
         end
     end
 
