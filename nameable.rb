@@ -6,6 +6,7 @@ end
 
 class Decorator < Nameable
   attr_accessor :name
+
   def initialize(nameable)
     @nameable = nameable
     super()
