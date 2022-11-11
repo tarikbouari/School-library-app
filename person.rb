@@ -1,6 +1,6 @@
 require_relative './nameable'
 
-class Person < nameable
+class Person < Nameable
   attr_accessor :age, :name
   attr_reader :id
 
