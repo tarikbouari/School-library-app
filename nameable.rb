@@ -5,7 +5,7 @@ class Nameable
 end
 
 class Decorator < Nameable
-  attr_accessor :name
+  attr_accessor :nameable
 
   def initialize(nameable)
     @nameable = nameable
