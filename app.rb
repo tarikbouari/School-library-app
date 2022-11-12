@@ -13,24 +13,24 @@ def list_books
   puts '****************'
 end
 
-def list_poeple
-  puts "******* \n List of all poeple \n ****************"
-  puts " No poeple is added \n ************" if @poeple.length.zero?
-  @poeple.each do |person|
-    puts "id: #{person.id} Title: #{person.name} Author: #{person.age}"
+def list_people
+  puts "******* \n List of all people \n ****************"
+  puts " No people is added \n ************" if @people.length.zero?
+  @people.each do |person|
+    puts "Id: #{person.id} name: #{person.name} Age: #{person.age}"
   end
   puts '****************'
 end
 
 def list_rental
   puts "******* \n List of all rental of a person \n ****************"
-  puts " Noone rent a book \n ************" if @rentals.length.zero?
+  puts " No one rent a book \n ************" if @rentals.length.zero?
   puts 'Enter id of a person'
-  person_id = gets.chomp.to_id
+  person_id = gets.chomp.to_i
 
   @rentals.each do |rental|
     if rental.person.id == person_id
-      puts "On #{reantal.date} the book:  #{rental.book.title} is rented by #{person.age}"
+      puts "On #{rental.date} the book:  #{rental.book.title} is rented by #{rental.person.name}"
       puts '****************'
     end
   end
@@ -82,6 +82,19 @@ def create_book
   book = Book.new(title, author)
   @books << book
   puts "Book created successfully\n-------------------------------------"
+end
+
+def create_teacher
+  print 'Age: '
+  age = gets.chomp
+  print 'Name: '
+  name = gets.chomp
+  print 'Specialization: '
+  specialization = gets.chomp
+
+  teacher = Teacher.new(specialization, age, name: name)
+  @people << teacher
+  puts "Teacher created successfully\n-------------------------------------"
 end
 
 def create_rental
