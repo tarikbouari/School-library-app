@@ -4,7 +4,7 @@ require_relative './rental'
 class Person < Nameable
   # Getters and Setters combined
   attr_accessor :age, :name, :rentals
-   # Getters
+  # Getters
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
