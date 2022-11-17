@@ -1,8 +1,8 @@
-require_relative './app'
+require_relative './classes/app'
 
 def main
   app = App.new
-  loop { app }
+  app.run
 end
 
 main
