@@ -1,6 +1,6 @@
 # School-library-app
 
->This is a school library App with a relational database where users can insert data and make queries. Build with ruby and PostgreSql. 
+>School library App  is a console application with a relational database where users can insert books , person and make some queries. Build with ruby. 
 
 ## Live Demo
 
@@ -12,9 +12,9 @@ Not available
 
 ## Getting Started
 
-- Clone the repo `git@github.com:shyusu4/Enumerable.git`
+- Clone the repo `git@github.com:tarikbouari/School-library-app.git`
 - cd `into` the project
-- Run `git pull origin app`
+- Run `git pull origin dev`
 
 ## Authors
 
@@ -28,7 +28,7 @@ Not available
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page.](https://github.com/shyusu4/Enumerable/issues)
+Feel free to check the [issues page.](https://github.com/tarikbouari/School-library-app/issues)
 
 ## Show your support
 
