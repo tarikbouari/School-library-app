@@ -1,6 +1,9 @@
 require_relative './student'
+require_relative '../modules/hooky'
 
 class Classroom
+  include Play_hookey
+
   attr_accessor :label
   attr_reader :students
 

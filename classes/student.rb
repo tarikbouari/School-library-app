@@ -8,13 +8,4 @@ class Student < Person
     @classroom = nil
     super(age, name: name, parent_permission: parent_permission)
   end
-
-  def play_hookey
-    '¯(ツ)/¯'
-  end
-
-  # def classroom=(classroom)
-  #   @classroom = classroom
-  #   classroom.students.push(self) unless classroom.students.include?(self)
-  # end
 end
