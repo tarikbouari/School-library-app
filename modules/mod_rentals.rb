@@ -33,7 +33,8 @@ module FunctionRental
       puts "Rental created successfully\n---------------------------------------------------------------"
     end
   end
-      # list rentals 
+
+  # list rentals
   def list_rental(rentals, people)
     puts 'There no items to list. please add rental' if rentals.length.zero?
     puts 'List of people'
