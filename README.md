@@ -24,6 +24,11 @@ Not available
 - Twitter: [@tarikbouari]()
 - LinkedIn: [tarikbouari]()
 
+👤 Farida Hamid
+
+- LinkedIn: [LinkedIn](https://linkedin.com/in/farida-hamid)
+- GitHub: [@Farida-Hamid](https://github.com/Farida-Hamid)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
