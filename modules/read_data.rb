@@ -12,4 +12,10 @@ module ReadData
         access_book.each {|book| books_arr << Book.new(book[1], book[2])} 
         books_arr   
     end
+    def list_rentals_data(books, people)
+        rental_arr = []
+        access_rental = access_data("rentals.json")
+        access_rental.each { |rental| rental_arr << Rental.new(rental[0], people[rental[1]] books[rental[2]])}
+        rental_arr
+    end
 end
