@@ -19,7 +19,7 @@ class App
   def run
     @books = list_books_data
     @people = list_people_data
-    @rentals = list_rentals_data
+    @rentals = list_rentals_data(@books, @people) if File.exists?("rentals.json")
     puts "Welcome to OOP School Library App!\n"
     loop do
       puts 'Please choose an option by entering a number:'
