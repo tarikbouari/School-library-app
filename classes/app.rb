@@ -17,7 +17,7 @@ class App
   end
 
   def run
-    access_data("books.json")
+    @books = list_books_data
     puts "Welcome to OOP School Library App!\n"
     loop do
       puts 'Please choose an option by entering a number:'
