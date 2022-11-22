@@ -1,11 +1,13 @@
 require_relative '../modules/methods'
 require_relative '../modules/mod_rentals'
 require_relative '../modules/mod_option'
+require_relative '../modules/store_data'
 
 class App
   include NewFunctions
   include FunctionRental
   include EntryOption
+  include StoreData
   def initialize
     @books = []
     @people = []

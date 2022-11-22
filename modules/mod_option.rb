@@ -17,7 +17,7 @@ module EntryOption
     when 6
       list_rental(@rentals, @people)
     when 7
-      exit
+      store_data(@books)
     else
       puts 'Invalid choice'
     end
