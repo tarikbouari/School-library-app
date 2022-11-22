@@ -21,6 +21,13 @@ module StoreData
     JSON.generate(rentals)
   end
 
+  def convert_people_list(person_list)
+    people = []
+    person_list.each {|item| people << [item.name, item.age ]}  
+    puts JSON.generate(people)
+    JSON.generate(people)
+  end
+
   def write_data(file_name, list)
     File.write(file_name, list)
   end
@@ -30,8 +37,10 @@ module StoreData
     create_file(file_name)
 
     booklist = convert_book_list(books)
-
     write_data(file_name, booklist)
+
+    create_file("person.json")
+    write_data("person.json", convert_people_list(people))
 
     create_file("rentals.json")
     write_data("rentals.json", convert_rental_list(rentals, books, people))

@@ -2,7 +2,7 @@ require 'json'
 
 module ReadData 
     def access_data(path)
-        file_data = File.read(path)
+        file_data = File.read(path) 
         puts file_data
         JSON.parse(file_data) 
     end
@@ -12,10 +12,17 @@ module ReadData
         access_book.each {|book| books_arr << Book.new(book[1], book[2])} 
         books_arr   
     end
+    def list_people_data
+        people_arr = []
+        access_people = access_data("person.json")
+        access_people.each{|person| people_arr << Person.new(person[0],person[1])}
+        people_arr
+    end
+        
     def list_rentals_data(books, people)
         rental_arr = []
         access_rental = access_data("rentals.json")
-        access_rental.each { |rental| rental_arr << Rental.new(rental[0], people[rental[1]] books[rental[2]])}
+        access_rental.each { |rental| rental_arr << Rental.new(rental[0], people[rental[1]], books[rental[2]])}
         rental_arr
     end
 end

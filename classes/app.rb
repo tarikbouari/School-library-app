@@ -18,7 +18,8 @@ class App
 
   def run
     @books = list_books_data
-    @rentals = list_rentals_data(@books, @people)
+    @people = list_people_data
+    @rentals = list_rentals_data
     puts "Welcome to OOP School Library App!\n"
     loop do
       puts 'Please choose an option by entering a number:'
