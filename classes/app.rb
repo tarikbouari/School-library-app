@@ -1,11 +1,15 @@
 require_relative '../modules/methods'
 require_relative '../modules/mod_rentals'
 require_relative '../modules/mod_option'
-
+require_relative '../modules/store_data'
+require_relative '../modules/read_data'
+require 'json'
 class App
   include NewFunctions
   include FunctionRental
   include EntryOption
+  include StoreData
+  include ReadData
   def initialize
     @books = []
     @people = []
@@ -13,6 +17,10 @@ class App
   end
 
   def run
+    @books = list_books_data if File.exist?('books.json')
+    @people = list_people_data if File.exist?('person.json')
+    @rentals = list_rentals_data(@books, @people) if File.exist?('rentals.json')
+
     puts "Welcome to OOP School Library App!\n"
     loop do
       puts 'Please choose an option by entering a number:'
