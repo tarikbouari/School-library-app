@@ -2,7 +2,7 @@ require 'json'
 
 module StoreData
   def create_file(file_name)
-    File.new(file_name, 'w+') if !File.exists?(file_name)
+    File.new(file_name, 'w+') unless File.exist?(file_name)
   end
 
   def convert_book_list(book_list)
@@ -24,11 +24,11 @@ module StoreData
   def convert_people_list(person_list)
     people = []
     person_list.each do |person|
-      if person.instance_of?(::Student)
-        people << ([person.class.name, person.age, person.name, person.parent_permission])
-      else
-        people << ([person.class.name, person.specialization, person.age, person.name])
-      end
+      people << if person.instance_of?(::Student)
+                  [person.class.name, person.age, person.name, person.parent_permission]
+                else
+                  [person.class.name, person.specialization, person.age, person.name]
+                end
     end
     JSON.generate(people)
   end
@@ -44,12 +44,12 @@ module StoreData
     booklist = convert_book_list(books)
     write_data(file_name, booklist)
 
-    create_file("person.json")
-    write_data("person.json", convert_people_list(people))
+    create_file('person.json')
+    write_data('person.json', convert_people_list(people))
 
-    create_file("rentals.json")
-    write_data("rentals.json", convert_rental_list(rentals, books, people))
-    
+    create_file('rentals.json')
+    write_data('rentals.json', convert_rental_list(rentals, books, people))
+
     exit
   end
 end
