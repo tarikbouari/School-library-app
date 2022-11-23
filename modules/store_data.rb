@@ -7,7 +7,7 @@ module StoreData
 
   def convert_book_list(book_list)
     books = []
-    book_list.each { |book|  books << [book.id, book.title, book.author] }
+    book_list.each { |book| books << [book.title, book.author] }
     JSON.generate(books)
   end
 
@@ -23,8 +23,13 @@ module StoreData
 
   def convert_people_list(person_list)
     people = []
-    person_list.each {|item| people << [item.name, item.age ]}  
-    puts JSON.generate(people)
+    person_list.each do |person|
+      if person.instance_of?(::Student)
+        people << ([person.class.name, person.age, person.name, person.parent_permission])
+      else
+        people << ([person.class.name, person.specialization, person.age, person.name])
+      end
+    end
     JSON.generate(people)
   end
 

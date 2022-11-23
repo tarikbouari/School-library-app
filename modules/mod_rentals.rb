@@ -48,6 +48,7 @@ module FunctionRental
       if rental.person.id.to_i == person_id
         puts "On #{rental.date} the book #{rental.book.title} was rent by #{rental.person.name}"
         puts '------------------------------------------------------------'
+        break
       else
         puts "No books was rent by person #{person_id}"
         puts '-------------------------------------------------------------------------'

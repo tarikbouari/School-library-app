@@ -3,19 +3,24 @@ require 'json'
 module ReadData 
     def access_data(path)
         file_data = File.read(path) 
-        puts file_data
         JSON.parse(file_data) 
     end
     def list_books_data
         books_arr = []
         access_book = access_data("books.json")
-        access_book.each {|book| books_arr << Book.new(book[1], book[2])} 
+        access_book.each {|book| books_arr << Book.new(book[0], book[1])} 
         books_arr   
     end
     def list_people_data
         people_arr = []
         access_people = access_data("person.json")
-        access_people.each{|person| people_arr << Person.new(person[0],person[1])}
+        access_people.each do |person|
+            if person[0] === "Student"
+                people_arr << Student.new(person[1].to_i, name: person[2], parent_permission: person[3])
+            else
+                people_arr << Teacher.new(person[1], person[2].to_i, name: person[3])
+            end
+        end
         people_arr
     end
         
