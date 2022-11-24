@@ -5,7 +5,7 @@ class Person < Nameable
   # Getters and Setters combined
   attr_accessor :age, :name, :rentals
   # Getters
-  attr_reader :id
+  attr_reader :id, :parent_permission
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..9999)
