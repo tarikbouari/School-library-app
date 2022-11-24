@@ -1,6 +1,6 @@
 require '../classes/student'
 
-describe "Test the Rental class:" do
+describe "Test the Student class:" do
   student = Student.new(12, name: "Sandy", parent_permission: false)
 
   it "Check properties" do
